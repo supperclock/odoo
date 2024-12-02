@@ -1,9 +1,12 @@
 2024年12月2日：
+
+
 mac上docker部署问题备忘：
 docker run --name odoo-postgres -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=odoo -p 5432:5432 -d postgres:15
 docker run -d -p 8069:8069 --name odoo --link odoo-postgres:db -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=odoo odoo 
 进入到odoo容器里，运行命令odoo --db_host 172.17.0.2 --db_port 5432 --db_user odoo --db_password odoo -d odoo -i base --xmlrpc-port=8070
 先记下上面重要的结果
+
 
 当前，所有国内的免费镜像源几乎都失效了，实在不想花精力再去找了，接通外网。。。。。
 前面用centos7老掉牙的环境，装了个docker的老版本，各种拉取问题。。。。。，包括中间突然断开等问题。。
