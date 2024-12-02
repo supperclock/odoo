@@ -22,7 +22,7 @@ docker run -d -p 8069:8069 --name odoo --link odoo-postgres:db -e POSTGRES_USER=
 也是太坑，初始运行默认的脚本没有初始化数据库，只能自己进到容器里，用另外一个端口启动初始化步骤，完成后关闭，再访问默认的端口就好了
 
 运行过程中查看容器日志，报错error from daemon in stream: Error grabbing logs: invalid character '\x00' looking for beginning of value，需要清理日志文件，使用了
-docker logs --tail 0 -f <容器ID或名称> > /dev/null命令后恢复正常
+“docker logs --tail 0 -f odoo > /dev/null”命令后恢复正常
 
 
 
