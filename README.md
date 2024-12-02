@@ -27,4 +27,5 @@ docker run -d -p 8069:8069 --name odoo --link odoo-postgres:db -e POSTGRES_USER=
 
 如何修改mac里docker容器中odoo的代码？禁用它的邮件功能？
 
+chatgpt给出了代码修改方案，就是将mail_mail.py里的send代码注释掉，mac上用docker cp命令将代码拷出，修改后再拷回去，重启容器，即可生效
 
