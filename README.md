@@ -25,4 +25,6 @@ docker run -d -p 8069:8069 --name odoo --link odoo-postgres:db -e POSTGRES_USER=
 “docker logs --tail 0 -f odoo > /dev/null”命令后恢复正常
 
 
+如何修改mac里docker容器中odoo的代码？禁用它的邮件功能？
+
 
