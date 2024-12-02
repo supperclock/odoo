@@ -4,6 +4,8 @@
 mac上docker部署问题备忘：
 
 docker run --name odoo-postgres -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=odoo -p 5432:5432 -d postgres:15
+
+
 docker run -d -p 8069:8069 --name odoo --link odoo-postgres:db -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=odoo odoo 
 
 进入到odoo容器里，运行命令odoo --db_host 172.17.0.2 --db_port 5432 --db_user odoo --db_password odoo -d odoo -i base --xmlrpc-port=8070
